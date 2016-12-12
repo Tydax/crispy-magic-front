@@ -1,16 +1,20 @@
 import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
+import { createStore, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
+import helloReducer from './reducers/hello-reducer.js';
+import Greeting from './containers/greeting.js'
+import GreetingButton from './containers/greeting-button.js'
 
-const App = props => (
-  <div>
-    <p>Hello {props.name}!</p>
-  </div>
-);
+const store = createStore(combineReducers({
+  greeting: helloReducer,
+}));
 
-App.propTypes = {
-  name: PropTypes.string.isRequired,
-};
-
-const nameVar = 'world';
-
-ReactDOM.render(<App name={nameVar} />, document.querySelector('.app'));
+ReactDOM.render(
+  <Provider store={store}>
+    <div>
+      <Greeting />
+      <GreetingButton />
+    </div>
+  </Provider>,
+  document.querySelector('.app'));
