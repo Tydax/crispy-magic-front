@@ -1,6 +1,7 @@
 import gulp from 'gulp';
 import babel from 'gulp-babel';
 import del from 'del';
+import flow from 'gulp-flowtype';
 import webpack from 'webpack-stream';
 import webpackConfig from './webpack.config.babel';
 
@@ -15,6 +16,12 @@ const paths = {
   distDir: 'dist',
 };
 
+// Check files
+gulp.task('check', () =>
+  gulp.src(paths.clientSrc)
+      .pipe(flow({ abort: true }))
+);
+
 // Task to clean up all generated files in libDir
 gulp.task('clean', () => del([
   paths.libDir,
@@ -22,7 +29,7 @@ gulp.task('clean', () => del([
 ]));
 
 // Building task taking care of transpile the sources
-gulp.task('build', ['clean'], () =>
+gulp.task('build', ['check', 'clean'], () =>
   gulp.src(paths.clientSrc)
     .pipe(babel())
     .pipe(gulp.dest(paths.libDir))

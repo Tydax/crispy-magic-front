@@ -16,8 +16,12 @@
   },
   "babel": {
     "presets": [
-      ["latest"],
-      ["react"]
+      [
+        "latest"
+      ],
+      [
+        "react"
+      ]
     ]
   },
   "env": {
@@ -31,11 +35,13 @@
   },
   "devDependencies": {
     "babel-loader": "^6.2.9",
+    "babel-preset-flow": "^1.0.0",
     "babel-preset-latest": "^6.16.0",
     "babel-preset-react": "^6.16.0",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
+    "gulp-flowtype": "^1.0.0",
     "webpack-stream": "^3.2.0"
   }
 }
