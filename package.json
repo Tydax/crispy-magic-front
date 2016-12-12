@@ -1,0 +1,43 @@
+{
+  "name": "crispy-magic-front",
+  "version": "0.0.1",
+  "description": "Front end interface code for the Crispy Magic app",
+  "license": "AGPL-3.0",
+  "repository": {
+    "url": "https://github.com/Narxem/crispy-magic-front.git",
+    "type": "git"
+  },
+  "contributors": [
+    "Armand (Tydax) Bour <tydax@protonmail.ch>",
+    "Adrien (Narxem) Agez <adrien.agez@hotmail.fr>"
+  ],
+  "scripts": {
+    "start": "gulp"
+  },
+  "babel": {
+    "presets": [
+      [
+        "latest"
+      ],
+      [
+        "react"
+      ]
+    ]
+  },
+  "env": {
+    "browser": true
+  },
+  "dependencies": {
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
+  },
+  "devDependencies": {
+    "babel-loader": "^6.2.9",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "webpack-stream": "^3.2.0"
+  }
+}
