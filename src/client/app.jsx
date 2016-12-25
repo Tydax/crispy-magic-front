@@ -17,4 +17,4 @@ ReactDOM.render(
       <GreetingButton />
     </div>
   </Provider>,
-  document.querySelector('.app'));
+  document.querySelector('#root'));
