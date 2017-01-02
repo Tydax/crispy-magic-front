@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 
-// TODO add key
 const NavMenuItem = ({ item }) => <a className='nav-butt' href={item.route}><li>{item.label}</li></a>;
 
 // Route objects are used to create the items in the menu
@@ -14,7 +13,7 @@ NavMenuItem.propTypes = {
 const NavMenu = ({ items }) => (
   <div className='nav-menu-cont'>
     <ul className='nav-menu'>
-      {items.map(item => <NavMenuItem item={item} />)}
+      {items.map(item => <NavMenuItem key={item.label} item={item} />)}
     </ul>
   </div>
 );
