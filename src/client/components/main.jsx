@@ -4,7 +4,7 @@ import Footer from './footer';
 
 const Main = ({ children }) => <div className='app'>
   <NavBar />
-  <main>
+  <main className='main-comp'>
     {children}
   </main>
   <Footer />

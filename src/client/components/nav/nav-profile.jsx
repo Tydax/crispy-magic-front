@@ -2,12 +2,14 @@ import React, { PropTypes } from 'react';
 import { Routes } from '../../../shared/constants';
 
 const NavProfileLogged = ({ user }) => (
-  <div className='nav-profile-user'>
-    <a className='nav-butt' href={Routes.signOut} >Se déconnecter</a>
-    <h6 className='profile-text'>{user.name}</h6>
-    <div class='round-circle'>
+  <div className='user'>
+    <div className='logoff-button nav-button'>
+      <a className='link' href={Routes.signOut}>Se déconnecter</a>
+    </div>
+    <h6 className='username'>{user.name}</h6>
+    <div class='imgcircle'>
       if (user.imgUrl) {
-        <img className='profile-img' src={user.imgUrl} alt="{user.name}'s profile image" />
+        <img className='img' src={user.imgUrl} alt="{user.name}'s profile image" />
       }
     </div>
   </div>
@@ -20,10 +22,14 @@ NavProfileLogged.propTypes = {
   }),
 };
 
-const NavProfileSignIn = () => <a href={Routes.signIn}><h6 className='profile-text'>Connectez-vous !</h6></a>;
+const NavProfileSignIn = () => (
+  <h6 className='signin-button nav-button'>
+    <a className='link' href={Routes.signIn}>Connectez-vous !</a>
+  </h6>
+);
 
 const NavProfile = ({ user }) => (
-  <div className='nav-profile-cont'>
+  <div className='nav-profile'>
     {user ? (
       <NavProfileLogged user={user} />
     ) : (
