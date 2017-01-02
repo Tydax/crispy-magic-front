@@ -8,4 +8,8 @@ const Routes = {
   signOut: '/',
 };
 
-export { Routes };
+const Images = {
+  magnifyingIcon: 'img/icons/',
+};
+
+export { Routes, Images };
