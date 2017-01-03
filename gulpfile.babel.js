@@ -18,7 +18,7 @@ const paths = {
 
 // Check files
 gulp.task('check', () =>
-  gulp.src(paths.clientSrc)
+  gulp.src(paths.allSrcJs)
       .pipe(flow({ abort: true }))
 );
 
@@ -30,7 +30,7 @@ gulp.task('clean', () => del([
 
 // Building task taking care of transpile the sources
 gulp.task('build', ['check', 'clean'], () =>
-  gulp.src(paths.clientSrc)
+  gulp.src(paths.allSrcJs)
     .pipe(babel())
     .pipe(gulp.dest(paths.libDir))
 );
@@ -44,7 +44,7 @@ gulp.task('main', ['build'], () =>
 
 // Watching change in the repository
 gulp.task('watch', () =>
-  gulp.watch(paths.clientSrc, ['main'])
+  gulp.watch(paths.allSrcJs, ['main'])
 );
 
 gulp.task('default', ['watch', 'main']);
