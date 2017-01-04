@@ -20,13 +20,15 @@ const generateCostItems = function generateCostItems(cost) {
   return costItems;
 };
 
-const CardCost = ({ cost }) => (
-  <div className='mana-cost'>
-    <ul className='cost-list'>
-      {generateCostItems(cost)}
-    </ul>
-  </div>
-);
+const CardCost = function CardCost({ cost }) {
+  return (
+    <div className='mana-cost'>
+      <ul className='cost-list'>
+        {generateCostItems(cost)}
+      </ul>
+    </div>
+  );
+};
 
 CardCost.propTypes = {
   cost: React.PropTypes.string.isRequired,

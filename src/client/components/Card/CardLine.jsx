@@ -5,13 +5,15 @@ import CardName from './CardName';
 import CardCopy from './CardCopy';
 import { capitalise } from '../../../shared/utils';
 
-const CardLine = ({ card }) => (
-  <li className='cardline-item'>
-    <CardCost cost={card.manaCost} />
-    <CardName name={card.name} colour={card.colour} />
-    <CardCopy numberCopies={card.numberCopies} rarity={card.rarity} />
-  </li>
-);
+const CardLine = function CardLine({ card }) {
+  return (
+    <li className='cardline-item'>
+      <CardCost cost={card.manaCost} />
+      <CardName name={card.name} colour={card.colour} />
+      <CardCopy numberCopies={card.numberCopies} rarity={card.rarity} />
+    </li>
+  );
+};
 
 CardLine.propTypes = {
   card: React.PropTypes.shape({

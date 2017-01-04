@@ -1,8 +1,10 @@
 import React, { PropTypes } from 'react';
 
-const CardName = ({ name, colour }) => (
-  <h6 className={`name mtg${capitalise(colour)}`}>{name}</h6>
-);
+const CardName = function CardName({ name, colour }) {
+  return (
+    <h6 className={`name mtg${capitalise(colour)}`}>{name}</h6>
+  );
+};
 
 CardName.propTypes = {
   name: React.PropTypes.string.isRequired,
