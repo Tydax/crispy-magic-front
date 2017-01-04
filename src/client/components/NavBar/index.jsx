@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { Routes } from '../../../shared/constants';
-import NavSearchBar from './nav-search-bar';
-import NavMenu from './nav-menu';
-import NavProfile from './nav-profile';
+import NavSearchBar from './NavSearchBar';
+import NavMenu from './NavMenu';
+import NavProfile from './NavProfile';
 
 const NavAppTitle = () => (
   <h1 className='app-title nav-button'>

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Main from './main/main';
-import BigPane from './main/big-pane';
-import SmallPane from './main/small-pane';
+import Main from './Main';
+import BigPane from './Main/BigPane';
+import SmallPane from './Main/SmallPane';
 
 const DeckBuilder = () => (
   <Main>

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
-import NavBar from '../nav/nav-bar';
-import Footer from './footer';
+import NavBar from '../NavBar';
+import Footer from './Footer';
 
 const Main = ({ children }) => <div className='app'>
   <NavBar />
