@@ -1,28 +1,35 @@
 import React, { PropTypes } from 'react';
 
+import CardCopy from './CardCopy';
 import CardCost from './CardCost';
 import CardName from './CardName';
-import CardCopy from './CardCopy';
+import AddCopyDeckButton from '../../containers/Card/add-copy-deck-CardButt'
+import RemoveCopyDeckButton from '../../containers/Card/remove-copy-deck-CardButt'
 import { capitalise } from '../../../shared/utils';
+import { CardPropTypes } from '../../../prop-types';
 
-const CardLine = function CardLine({ card }) {
-  return (
-    <li className='cardline-item'>
-      <CardCost cost={card.manaCost} />
-      <CardName name={card.name} colour={card.colour} />
-      <CardCopy numberCopies={card.numberCopies} rarity={card.rarity} />
-    </li>
-  );
+const propTypes = {
+  card: CardPropTypes.isRequired,
 };
 
-CardLine.propTypes = {
-  card: React.PropTypes.shape({
-    name: CardName.propTypes.name,
-    colour: CardName.propTypes.colour,
-    manaCost: React.PropTypes.shape(CardCost.propTypes).isRequired,
-    numberCopies: CardCopy.propTypes.numberCopies,
-    rarity: CardCopy.propTypes.rarity,
-  }).isRequired,
+class CardLine extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <li className='cardline-item'>
+          <CardCost cost={this.props.card.manaCost} />
+          <CardName name={this.props.card.name} colour={this.props.card.colour} />
+          <CardCopy numberCopies={this.props.card.numberCopies} rarity={this.props.card.rarity} />
+          <AddCopyDeckButton variants={['-small', 'add-button']} label="+" />
+          <RemoveCopyDeckButton variants={['-small', 'minus-button']} label="–" />
+        </li>
+      );
+    }
 };
+
+CardLine.propTypes = propTypes;
 
 export default CardLine;

@@ -1,17 +1,19 @@
 import React, { PropTypes } from 'react';
 
-const CardButt = function CardButt({ action, variants, label }) {
-  const classNames = ['card-button'];
+const classNames = ['card-button'];
+
+const CardButt = function CardButt({ action, id, label, variants}) {
   if (variants && variants.length != 0) {
     classNames.push(variants);
   }
-  return <button className={classNames.join(' ')} onClick={action}>{label}</button>;
+  return <button className={classNames.join(' ')} onClick={action(id)}>{label}</button>;
 };
 
 CardButt.propTypes = {
   action: React.PropTypes.function.isRequired,
+  id: React.PropTypes.number.isRequired,
+  label: React.PropTypes.string.isRequired,
   variants: React.PropTypes.arrayOf(React.Proptypes.string),
-
 };
 
 CardButt.defaultProps = {
