@@ -4,20 +4,17 @@ import React, { PropTypes } from 'react';
 const hasNumber = /\d/;
 
 const generateCostItems = function generateCostItems(cost) {
-  const costItems = [];
   const costValues = cost.split(/{.*}/);
 
-  for (const costValue of costValues) {
+  return costValues.map(costValue => {
     // true : Colourless mana, so just display the number
     // false : Colour mana, strip out '/' for double colour mana
     const costStr = hasNumber.test(costValue)
                   ? costValue
                   : costValue.replace('/', '');
     const classStr = `cost-item mana small s${capitalise(costStr)}`;
-    costItems.push(() => <li className={classStr}></li>);
-  }
-
-  return costItems;
+    return <li className={classStr}></li>;
+  });
 };
 
 const CardCost = function CardCost({ cost }) {
