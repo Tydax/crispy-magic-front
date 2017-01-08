@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-// Regex to check if string contaisn a number
+// Regex to check if string contains a number
 const hasNumber = /\d/;
 
 const generateCostItems = function generateCostItems(cost) {

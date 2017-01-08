@@ -7,6 +7,6 @@
  */
 const capitalise = function capitalise(str: string): string {
   return str.replace(/\b\w/g, l => l.toUpperCase());
-}
+};
 
 export { capitalise };
