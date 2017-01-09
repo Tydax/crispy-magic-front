@@ -3,6 +3,7 @@ import React from 'react';
 import Main from './Main';
 import BigPane from './Main/BigPane';
 import SmallPane from './Main/SmallPane';
+import DeckCardList from '../containers/Card/deck-CardList';
 
 const DeckBuilder = function DeckBuidler() {
   return (
@@ -13,7 +14,7 @@ const DeckBuilder = function DeckBuidler() {
       </BigPane>
       // TODO Remove placeholder
       <SmallPane>
-        <h1>Colonne du deck</h1>
+        <DeckCardList />
       </SmallPane>
     </Main>
   );

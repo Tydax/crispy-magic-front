@@ -16,7 +16,7 @@ const removeCardCopy = (id, amount) => ({
   },
 });
 
-export default {
+export {
   ADD_CARD_COPY,
   addCardCopy,
   REMOVE_CARD_COPY,

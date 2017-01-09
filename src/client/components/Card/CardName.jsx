@@ -1,5 +1,7 @@
 import React, { PropTypes } from 'react';
 
+import { capitalise } from '../../../shared/utils';
+
 const CardName = function CardName({ name, colour }) {
   return (
     <h6 className={`name mtg${capitalise(colour)}`}>{name}</h6>
