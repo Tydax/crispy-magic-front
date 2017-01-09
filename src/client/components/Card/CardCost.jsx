@@ -7,14 +7,12 @@ import { CardPropTypes } from '../../../shared/prop-types';
 const hasNumber = /\d/;
 
 const generateCostItems = function generateCostItems(cost) {
-  const costValues = cost.split(/{.*}/);
-
+  const costValues = cost.match(/{([^{}]*)}+/g);
   return costValues.map((costValue, index) => {
     // true : Colourless mana, so just display the number
     // false : Colour mana, strip out '/' for double colour mana
-    const costStr = hasNumber.test(costValue)
-                  ? costValue
-                  : capitalise(costValue.replace('/', ''));
+    const strippedCost = costValue.replace(/[{}\/]/g, '');
+    const costStr = hasNumber.test(costValue) ? strippedCost : strippedCost.toLowerCase();
     const classStr = `cost-item mana small s${costStr}`;
     return <li key={index} className={classStr}></li>;
   });

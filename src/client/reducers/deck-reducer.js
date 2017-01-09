@@ -10,7 +10,7 @@ const initialState = Map({
     name: 'Carte test',
     type: 'creature',
     colour: 'blue',
-    manaCost: '{2} {U} {U} {W/U}',
+    manaCost: '{2}{U}{U}{W/U}',
     numberCopies: 1,
     rarity: 'rare',
   })]),
