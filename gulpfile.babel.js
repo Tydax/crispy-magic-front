@@ -39,7 +39,7 @@ gulp.task('clean', () => {
   return del([
   paths.libDir,
   paths.clientBundle,
-  // Create array of paths using this format: 'dist/{dir}/{src}'
+  // Create array of paths using this format: 'dist/libs/{dir}'
   ...Object.keys(libs).map(lib => [paths.distDir, paths.libsDir, lib.dir].join('/')),
 ])});
 
@@ -63,7 +63,6 @@ gulp.task('copylibs', () => {
   const files = Object.keys(libs).reduce((arr, lib) => (
     arr.concat(libs[lib].src.map(src => [paths.libsDir, libs[lib].dir, src].join('/')))
   ), []);
-  console.log(files[0].substring(0, files[0].lastIndexOf('/')));
   return files.map(file => gulp.src(file)
     .pipe(gulp.dest([paths.distDir, file.substring(0, file.lastIndexOf('/'))].join('/')))
   );
