@@ -10,7 +10,7 @@ const NavMenuItem = function NavMenuItem({ item }) {
 
 // Route objects are used to create the items in the menu
 NavMenuItem.propTypes = {
-  item: React.PropTypes.shape({
+  item: PropTypes.shape({
     route: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
   }).isRequired,
@@ -27,7 +27,7 @@ const NavMenu = function NavMenu ({ items }) {
 };
 
 NavMenu.propTypes = {
-  items: React.PropTypes.arrayOf(NavMenuItem.propTypes.item).isRequired,
+  items: PropTypes.arrayOf(NavMenuItem.propTypes.item).isRequired,
 };
 
 export default NavMenu;

@@ -8,7 +8,7 @@ const NavSearchBarInput = function NavSearchBarInput({ value }) {
 };
 
 NavSearchBarInput.propTypes = {
-  value: React.PropTypes.string,
+  value: PropTypes.string,
 };
 
 const NavSearchButton = function NavSearchButton() {

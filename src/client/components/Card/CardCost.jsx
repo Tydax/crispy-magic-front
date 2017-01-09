@@ -31,7 +31,7 @@ const CardCost = function CardCost({ cost }) {
 };
 
 CardCost.propTypes = {
-  cost: React.PropTypes.string.isRequired,
+  cost: PropTypes.string.isRequired,
 };
 
 export default CardCost;

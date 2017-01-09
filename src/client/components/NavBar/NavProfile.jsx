@@ -18,9 +18,9 @@ const NavProfileLogged = function NavProfile({ user }) {
 };
 
 NavProfileLogged.propTypes = {
-  user: React.PropTypes.shape({
-    name: React.PropTypes.string.isRequired,
-    imgUrl: React.PropTypes.string,
+  user: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    imgUrl: PropTypes.string,
   }),
 };
 

@@ -8,9 +8,9 @@ import { capitalise } from '../../../shared/utils';
 import { CardPropTypes } from '../../../shared/prop-types';
 
 const propTypes = {
-  card: React.PropTypes.object,
-  onAddCopy: React.PropTypes.func.isRequired,
-  onRemoveCopy: React.PropTypes.func.isRequired,
+  card: PropTypes.object,
+  onAddCopy: PropTypes.func.isRequired,
+  onRemoveCopy: PropTypes.func.isRequired,
 };
 
 class CardLine extends React.Component {

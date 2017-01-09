@@ -6,8 +6,8 @@ import { CardPropTypes } from '../../../shared/prop-types';
 import { capitalise } from '../../../shared/utils';
 
 const propTypes = {
-  cards: React.PropTypes.object,
-  categories: React.PropTypes.arrayOf(React.PropTypes.string),
+  cards: PropTypes.object,
+  categories: PropTypes.arrayOf(React.PropTypes.string),
 };
 
 const defaultProps = {

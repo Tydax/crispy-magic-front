@@ -9,9 +9,9 @@ const CardButt = function CardButt({ action, id, label, variants }) {
 };
 
 CardButt.propTypes = {
-  action: React.PropTypes.func.isRequired,
-  label: React.PropTypes.string.isRequired,
-  variants: React.PropTypes.arrayOf(React.PropTypes.string),
+  action: PropTypes.func.isRequired,
+  label: PropTypes.string.isRequired,
+  variants: PropTypes.arrayOf(PropTypes.string),
 };
 
 CardButt.defaultProps = {

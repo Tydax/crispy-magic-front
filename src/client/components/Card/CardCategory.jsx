@@ -5,8 +5,8 @@ import DeckCardLine from '../../containers/Card/deck-CardLine';
 import { CardPropTypes } from '../../../shared/prop-types';
 
 const propTypes = {
-  title: React.PropTypes.string.isRequired,
-  cards: React.PropTypes.object,
+  title: PropTypes.string.isRequired,
+  cards: PropTypes.object,
 };
 
 const defaultProps = {

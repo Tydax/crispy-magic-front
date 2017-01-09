@@ -7,8 +7,8 @@ const CardCopy = function CardCopy({ numberCopies, rarity }) {
 };
 
 CardCopy.propTypes = {
-  numberCopies: React.PropTypes.number.isRequired,
-  rarity: React.PropTypes.string.isRequired,
+  numberCopies: PropTypes.number.isRequired,
+  rarity: PropTypes.string.isRequired,
 };
 
 export default CardCopy;
