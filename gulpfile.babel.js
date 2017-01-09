@@ -16,6 +16,7 @@ const paths = {
   libDir: 'lib',
   libsDir: 'libs',
   distDir: 'dist',
+  distLibsDir: 'dist/libs',
 };
 
 const libs = {
@@ -39,8 +40,7 @@ gulp.task('clean', () => {
   return del([
   paths.libDir,
   paths.clientBundle,
-  // Create array of paths using this format: 'dist/libs/{dir}'
-  ...Object.keys(libs).map(lib => [paths.distDir, paths.libsDir, lib.dir].join('/')),
+  paths.distLibsDir,
 ])});
 
 // Building task taking care of transpiling the sources
@@ -50,15 +50,8 @@ gulp.task('build', ['check', 'clean'], () =>
     .pipe(gulp.dest(paths.libDir))
 );
 
-// Bundling in webpack task
-gulp.task('main', ['build'], () =>
-  gulp.src(paths.clientEntryPoint)
-    .pipe(webpack(webpackConfig))
-    .pipe(gulp.dest(paths.distDir))
-);
-
 // Copy libs into dist
-gulp.task('copylibs', () => {
+gulp.task('copylibs', ['clean'], () => {
   // Create array of paths using this format: 'libs/{dir}/{src}'
   const files = Object.keys(libs).reduce((arr, lib) => (
     arr.concat(libs[lib].src.map(src => [paths.libsDir, libs[lib].dir, src].join('/')))
@@ -68,9 +61,16 @@ gulp.task('copylibs', () => {
   );
 });
 
+// Bundling in webpack task
+gulp.task('main', ['build', 'copylibs'], () =>
+  gulp.src(paths.clientEntryPoint)
+    .pipe(webpack(webpackConfig))
+    .pipe(gulp.dest(paths.distDir))
+);
+
 // Watching change in the repository
 gulp.task('watch', () =>
   gulp.watch(paths.allSrcJs, ['main'])
 );
 
-gulp.task('default', ['watch', 'main', 'copylibs']);
+gulp.task('default', ['watch', 'main']);
