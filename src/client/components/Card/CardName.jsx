@@ -1,6 +1,7 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 
 import { capitalise } from '../../../shared/utils';
+import { CardPropTypes } from '../../../shared/prop-types';
 
 const CardName = function CardName({ name, colour }) {
   return (
@@ -9,8 +10,8 @@ const CardName = function CardName({ name, colour }) {
 };
 
 CardName.propTypes = {
-  name: PropTypes.string.isRequired,
-  colour: PropTypes.string.isRequired,
+  name: CardPropTypes.name.isRequired,
+  colour: CardPropTypes.colour.isRequired,
 };
 
 export default CardName;

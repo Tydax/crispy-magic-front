@@ -1,6 +1,7 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 import { capitalise } from '../../../shared/utils';
+import { CardPropTypes } from '../../../shared/prop-types';
 
 // Regex to check if string contains a number
 const hasNumber = /\d/;
@@ -31,7 +32,7 @@ const CardCost = function CardCost({ cost }) {
 };
 
 CardCost.propTypes = {
-  cost: PropTypes.string.isRequired,
+  cost: CardPropTypes.manaCost.isRequired,
 };
 
 export default CardCost;

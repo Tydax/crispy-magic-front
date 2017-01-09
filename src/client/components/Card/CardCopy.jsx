@@ -1,14 +1,16 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 
 import { capitalise } from '../../../shared/utils';
+import { CardPropTypes } from '../../../shared/prop-types';
+
 
 const CardCopy = function CardCopy({ numberCopies, rarity }) {
   return <span className={`nbcopies mtg${capitalise(rarity)}`}>{numberCopies}</span>;
 };
 
 CardCopy.propTypes = {
-  numberCopies: PropTypes.number.isRequired,
-  rarity: PropTypes.string.isRequired,
+  numberCopies: CardPropTypes.numberCopies.isRequired,
+  rarity: CardPropTypes.rarity.isRequired,
 };
 
 export default CardCopy;
