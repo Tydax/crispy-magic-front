@@ -39,6 +39,7 @@ jspm_packages
 lib/
 dist/libs
 dist/client-bundle.js*
+dist/css
 
 yarn*
 !yarn.lock
