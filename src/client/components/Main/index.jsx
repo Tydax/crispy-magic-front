@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import NavBar from '../NavBar';
 import Footer from './Footer';
 
-const Main = function Mail ({ children }) {
+const Main = function Main ({ children }) {
   return (
     <div className='app'>
       <NavBar />

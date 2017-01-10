@@ -5,7 +5,7 @@ import BigPane from './Main/BigPane';
 import SmallPane from './Main/SmallPane';
 import DeckCardList from '../containers/Card/deck-CardList';
 
-const DeckBuilder = function DeckBuidler() {
+const DeckBuilder = function DeckBuilder() {
   return (
     <Main>
       <BigPane>
