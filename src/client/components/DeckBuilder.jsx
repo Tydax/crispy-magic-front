@@ -1,0 +1,23 @@
+import React from 'react';
+
+import Main from './Main';
+import BigPane from './Main/BigPane';
+import SmallPane from './Main/SmallPane';
+import DeckCardList from '../containers/Card/deck-CardList';
+
+const DeckBuilder = function DeckBuidler() {
+  return (
+    <Main>
+      <BigPane>
+        // TODO Remove placeholder
+        <h1>Résultats de recherche</h1>
+      </BigPane>
+      // TODO Remove placeholder
+      <SmallPane>
+        <DeckCardList />
+      </SmallPane>
+    </Main>
+  );
+};
+
+export default DeckBuilder;
