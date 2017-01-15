@@ -7,7 +7,7 @@ import NavProfile from './NavProfile';
 
 const NavAppTitle = function NavAppTitle() {
   return (
-    <h1 className='app-title nav-button'>
+    <h1 className='element app-title nav-button'>
       <a className='link' href={Routes.home}>Crispy Magic</a>
     </h1>
   );

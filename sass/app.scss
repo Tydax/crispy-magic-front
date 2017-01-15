@@ -1,5 +1,6 @@
-$body-bg: teal;
+@import "utils/_reset";
+@import 'components/_navbar';
 
 #root {
-  background: linear-gradient($body-bg, white);
+  font-family: $main-font;
 }

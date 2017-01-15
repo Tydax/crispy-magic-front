@@ -34,7 +34,7 @@ const NavProfileSignIn = function NavProfileSignIn() {
 
 const NavProfile = function NavProfile({ user }) {
   return (
-    <div className='nav-profile'>
+    <div className='element nav-profile'>
       {user ? (
         <NavProfileLogged user={user} />
       ) : (
