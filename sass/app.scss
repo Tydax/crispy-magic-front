@@ -1,5 +1,5 @@
-$body-bg: teal;
+$body-bg: white;
 
 #root {
-  background: linear-gradient($body-bg, white);
+  background: $body-bg;
 }
