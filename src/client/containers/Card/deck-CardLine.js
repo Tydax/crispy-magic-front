@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import CardLine from '../../components/Card/CardLine';
-import { addCardCopy, removeCardCopy } from  '../../actions/Card/CardButt-actions';
+import { addCardCopy, removeCardCopy } from  '../../actions/card-actions';
 
 const mapDispatchToProps = dispatch => ({
   onAddCopy: id => dispatch(addCardCopy(id, 1)),

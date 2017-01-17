@@ -2,7 +2,7 @@ import { List, Map } from 'immutable';
 
 import {
   ADD_CARD_COPY, REMOVE_CARD_COPY
-} from '../actions/Card/CardButt-actions';
+} from '../actions/card-actions';
 
 const initialState = Map({
   cardList: List([Map({
