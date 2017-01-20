@@ -4,9 +4,7 @@ import { capitalise } from '../../../shared/utils';
 import { CardPropTypes } from '../../../shared/prop-types';
 
 const CardName = function CardName({ name, colour }) {
-  return (
-    <h3 className={`name --${capitalise(colour)}`}>{name}</h3>
-  );
+  return <h3 className={`name --${capitalise(colour)}`}>{name}</h3>;
 };
 
 CardName.propTypes = {
