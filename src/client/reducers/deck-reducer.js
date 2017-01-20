@@ -13,6 +13,8 @@ const initialState = Map({
     manaCost: '{2}{U}{U}{W/U}',
     numberCopies: 1,
     rarity: 'rare',
+    imageUrl: '',
+    text: 'I love being a test card. It\'s so cool.',
   })]),
 });
 
