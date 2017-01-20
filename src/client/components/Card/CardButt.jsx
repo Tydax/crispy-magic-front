@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
 
 const CardButt = function CardButt({ action, id, label, variants }) {
-  const classNames = ['card-button'];
+  let classNames = ['card-button'];
   if (variants && variants.length != 0) {
-    classNames.push(variants);
+    classNames = classNames.concat(variants);
   }
   return <button className={classNames.join(' ')} onClick={action}>{label}</button>;
 };
