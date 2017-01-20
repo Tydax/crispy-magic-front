@@ -5,7 +5,7 @@ import { CardPropTypes } from '../../../shared/prop-types';
 
 const CardName = function CardName({ name, colour }) {
   return (
-    <h6 className={`name mtg${capitalise(colour)}`}>{name}</h6>
+    <h3 className={`name --${capitalise(colour)}`}>{name}</h3>
   );
 };
 
