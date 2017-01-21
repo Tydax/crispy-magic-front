@@ -1,3 +1,6 @@
+import { convertArgs } from './utils';
+import Configuration from './configuration';
+
 const Routes = {
   home: '/',
   myLibrary: '/',
@@ -12,4 +15,12 @@ const Images = {
   magnifyingIcon: 'img/icons/',
 };
 
-export { Routes, Images };
+const cardParams = ['name', 'types', 'cmc'];
+
+const ApiUrl = {
+  Cards: {
+    retrieve: (name, types, cmc) => `${Configuration.urlServer}/api/cards?${convertArgs({name, types, cmc}, ...cardParams)}`,
+  }
+};
+
+export { Routes, Images, ApiUrl };
