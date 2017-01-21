@@ -22,7 +22,7 @@ class CardLine extends React.Component {
     return (
       <li className='cardline-item'>
           <CardCost cost={this.props.card.get('manaCost')} />
-          <CardName name={this.props.card.get('name')} colour={this.props.card.get('colour')} />
+          <CardName name={this.props.card.get('name')} colours={this.props.card.get('colors')} />
           <CardCopy numberCopies={this.props.card.get('numberCopies')} rarity={this.props.card.get('rarity')} />
           <CardButt action={() => this.props.onAddCopy(this.props.card.get('id'))} variants={['-small', 'add-button']} label="+" />
           <CardButt action={() => this.props.onRemoveCopy(this.props.card.get('id'))} variants={['-small', 'minus-button']} label="–" />
