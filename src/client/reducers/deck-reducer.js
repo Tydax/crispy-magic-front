@@ -1,21 +1,15 @@
-import { List, Map } from 'immutable';
+import { List, Map, fromJS } from 'immutable';
 
 import {
-  ADD_CARD_COPY, REMOVE_CARD_COPY
-} from '../actions/Card/CardButt-actions';
+  ADD_CARD_COPY,REMOVE_CARD_COPY,
+  REQUEST_CARDS, RECEIVE_CARDS,
+} from '../actions/card-actions';
+
+import { INVALIDATE_CONTAINER } from '../actions/container-actions';
 
 const initialState = Map({
-  cardList: List([Map({
-    id: 0,
-    name: 'Carte test',
-    type: 'creature',
-    colour: 'blue',
-    manaCost: '{2}{U}{U}{W/U}',
-    numberCopies: 1,
-    rarity: 'rare',
-    imageUrl: '',
-    text: 'I love being a test card. It\'s so cool.',
-  })]),
+  cardList: List(),
+  isFetching: false,
 });
 
 const deckReducer = (state = initialState, action) => {
@@ -36,6 +30,24 @@ const deckReducer = (state = initialState, action) => {
             return cardList.remove(action.payload.id);
           }
       }));
+
+    case REQUEST_CARDS:
+      return state.set('isFetching', true);
+
+    case RECEIVE_CARDS:
+      const updateCardList = (cardList) => (
+        // Add to card list the fetched cards
+        cardList.merge(action.payload.sets.reduce((allCards, set) => (
+          // Concatenate each array of cards contained in each set
+          allCards.concat(set.cards.map(card => {
+            // Add set information to card
+            const setInfo = Map(set).delete('cards');
+            return Map(card).set('set', setInfo);
+          }))
+        ), []))
+      );
+      return state.set('isFetching', false)
+                  .update('cardList', updateCardList);
 
     default: return state;
   }
