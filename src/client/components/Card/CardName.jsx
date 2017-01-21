@@ -12,7 +12,7 @@ const CardName = function CardName({ name, colours }) {
   // Display yellow if multiple colours
   const colour = colours.length > 1 ? 'Yellow' : colours[0];
   return (
-    <h6 className={`name --${capitalise(colour)}`}>{name}</h6>
+    <h4 className={`name -${colour.toLowerCase()}`}>{name}</h4>
   );
 };
 
