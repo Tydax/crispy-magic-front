@@ -18,8 +18,10 @@ const Images = {
 const cardParams = ['name', 'types', 'cmc'];
 
 const ApiUrl = {
-  Cards: {
-    retrieve: (name, types, cmc) => `${Configuration.urlServer}/api/cards?${convertArgs({name, types, cmc}, ...cardParams)}`,
+  cards: {
+    retrieve: criteria => (
+      `${Configuration.urlServer}/api/cards?${convertArgs(criteria, ...cardParams)}`
+    ),
   }
 };
 
