@@ -1,24 +1,20 @@
 import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
 
 import { ApiUrl } from '../shared/constants';
-import { fetchCards } from './actions/card-actions';
-import deckReducer from './reducers/deck-reducer';
+import { fetchEntities } from './actions/entity-actions'
+import appReducer from './reducers/app-reducer';
 // import Home from './components/home';
 import DeckBuilder from './components/DeckBuilder';
 
 const loggerMiddleware = createLogger();
 
-const reducers = combineReducers({
-  deck: deckReducer,
-});
-
 const store = createStore(
-  reducers,
+  appReducer,
   applyMiddleware(
     thunkMiddleware,
     loggerMiddleware
@@ -26,10 +22,10 @@ const store = createStore(
 
 const criteria = {
   name: 'gideon',
-  types: 'c',
+  types: 'cp',
 };
 
-store.dispatch(fetchCards('deck', criteria)).then(() =>
+store.dispatch(fetchEntities('cards', criteria, 'deck')).then(() =>
   console.log(store.getState())
 );
 
