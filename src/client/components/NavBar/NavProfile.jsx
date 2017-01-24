@@ -34,13 +34,13 @@ const NavProfileSignIn = function NavProfileSignIn() {
 
 const NavProfile = function NavProfile({ user }) {
   return (
-    <div className='element nav-profile'>
+    <li className='menu-item nav-profile'>
       {user ? (
         <NavProfileLogged user={user} />
       ) : (
         <NavProfileSignIn />
       )}
-    </div>
+    </li>
   );
 }
 

@@ -3,12 +3,37 @@
 .nav-bar {
   background: $nav-bg-colour;
   color: $nav-colour;
-  display: flex;
-  flex-flow: row-wrap;
-  justify-content: space-between;
-  height: $nav-height;
 
-  > .element {
+  // height: $nav-height;
+
+  > .menu-list {
+    display: flex;
+    flex-flow: row-wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+  }
+
+  > .menu-list > .menu-item,
+  > .menu-list > .menu-item > .other-menu-list > .menu-item > .other-menu-item {
+    display: inline-block;
+    height: 100%;
+  }
+
+  > .menu-list > .menu-item > .link,
+  > .menu-list > .menu-item > .other-menu-list > .other-menu-item > .link {
+    $padding-tb: ($nav-height - $nav-menu-fontsize) / 2 + (1 - $nav-menu-fontsize);
+    font-size: $nav-menu-fontsize;
+    padding-top: $padding-tb;
+    padding-bottom: $padding-tb;
+  }
+}
+
+.other-menu-list {
+  display: inline-block;
+  list-style: none;
+
+  > .other-menu-item {
     display: inline-block;
     height: 100%;
   }
@@ -28,28 +53,12 @@
   > .link {
     color: $nav-colour;
     display: inline-block;
-    line-height: $nav-height;
-    $padding-lr: 15%;
-    height: 100%;
+    // line-height: $nav-height;
+    $padding-lr: 1em;
+    // height: 100%;
     padding-left: $padding-lr;
     padding-right: $padding-lr;
-  }
-}
-
-.nav-menu {
-  > .menu-list {
-    height: 100%;
-    list-style: none;
-  }
-
-  > .menu-list > .menu-item {
-    display: inline-block;
-    height: 100%;
-  }
-
-  > .menu-list > .menu-item > .link {
-    $padding-tb: ($nav-height - $nav-menu-fontsize) / 2 + (1 - $nav-menu-fontsize);
-    font-size: $nav-menu-fontsize;
+    // width: auto;
   }
 }
 
@@ -103,5 +112,5 @@
 }
 
 .nav-profile {
-  
+
 }

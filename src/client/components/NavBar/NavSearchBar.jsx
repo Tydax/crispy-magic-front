@@ -21,10 +21,10 @@ const NavSearchButton = function NavSearchButton() {
 
 const NavSearchBar = function NavSearchBar({ value }) {
   return (
-    <div className='element nav-search'>
+    <li className='menu-item nav-search'>
       <NavSearchBarInput value={value} />
       <NavSearchButton />
-    </div>
+    </li>
   );
 };
 
