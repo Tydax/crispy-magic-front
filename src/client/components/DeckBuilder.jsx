@@ -14,7 +14,8 @@ const DeckBuilder = function DeckBuilder() {
       </BigPane>
       // TODO Remove placeholder
       <SmallPane>
-        <DeckCardList />
+
+        <DeckCardList categories={['creature&planeswalker', 'artefact&enchantment', 'land']} />
       </SmallPane>
     </Main>
   );

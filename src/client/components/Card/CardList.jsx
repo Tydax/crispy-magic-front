@@ -11,8 +11,8 @@ const propTypes = {
 };
 
 const defaultProps = {
-  cards: List(),
-  categories: ['creature', 'artefact&enchantment'],
+  cards: [],
+  categories: ['creature', 'artefact&enchantment', 'land'],
 };
 
 class CardList extends React.Component {
