@@ -1,0 +1,107 @@
+@import '../utils/_constants';
+
+.nav-bar {
+  background: $nav-bg-colour;
+  color: $nav-colour;
+  display: flex;
+  flex-flow: row-wrap;
+  justify-content: space-between;
+  height: $nav-height;
+
+  > .element {
+    display: inline-block;
+    height: 100%;
+  }
+}
+
+.app-title {
+  font-size: $nav-title-fontsize;
+}
+
+.nav-button {
+  transition: $trans-time background;
+
+  &:hover {
+    background: darken($nav-bg-colour, 10%);
+  }
+
+  > .link {
+    color: $nav-colour;
+    display: inline-block;
+    line-height: $nav-height;
+    $padding-lr: 15%;
+    height: 100%;
+    padding-left: $padding-lr;
+    padding-right: $padding-lr;
+  }
+}
+
+.nav-menu {
+  > .menu-list {
+    height: 100%;
+    list-style: none;
+  }
+
+  > .menu-list > .menu-item {
+    display: inline-block;
+    height: 100%;
+  }
+
+  > .menu-list > .menu-item > .link {
+    $padding-tb: ($nav-height - $nav-menu-fontsize) / 2 + (1 - $nav-menu-fontsize);
+    font-size: $nav-menu-fontsize;
+  }
+}
+
+.nav-search {
+  $margin-tb: ($nav-height - $nav-search-height) / 2;
+  margin: $margin-tb 0;
+  // padding: $margin-tb 0;
+  height: $nav-search-height !important;
+  transition: $trans-time width;
+  width: 30%;
+
+  > .field,
+  > .search-button {
+    border: none;
+    box-shadow: 2px 2px 2px darken($nav-bg-colour, 20%);
+    display: inline-block;
+    font-size: $nav-search-fontsize;
+    height: 100%;
+  }
+
+  > .field {
+    border-top-left-radius: 1px;
+    border-bottom-left-radius: 1px;
+    float: left;
+    padding: ($nav-search-padding) 2%;
+    transition: 0.2s box-shadow;
+    width: 68%;
+  }
+
+  > .field:focus {
+    box-shadow:
+      2px 2px 2px darken($nav-bg-colour, 20%),
+      0 0 4px 0 grey inset;
+  }
+
+  > .search-button {
+    background: $nav-emph-colour;
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 1px;
+    color: $nav-colour;
+    padding: $nav-search-padding 2%;
+    transition:
+      $trans-time background,
+      $trans-time color;
+
+    &:hover {
+      background: lighten($nav-emph-colour, 30%);
+      color: darken($nav-emph-colour, 10%);
+    }
+  }
+}
+
+.nav-profile {
+  
+}

@@ -18,7 +18,7 @@ NavMenuItem.propTypes = {
 
 const NavMenu = function NavMenu ({ items }) {
   return (
-    <div className='nav-menu'>
+    <div className='element nav-menu'>
       <ul className='menu-list'>
         {items.map(item => <NavMenuItem key={item.label} item={item} />)}
       </ul>

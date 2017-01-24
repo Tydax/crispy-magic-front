@@ -1,5 +1,6 @@
-$body-bg: white;
+@import "utils/_reset";
+@import 'components/_navbar';
 
 #root {
-  background: $body-bg;
+  font-family: $main-font;
 }
