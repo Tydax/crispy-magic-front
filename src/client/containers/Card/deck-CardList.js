@@ -4,7 +4,6 @@ import CardList from '../../components/Card/CardList';
 
 const convertCards = (entities) => {
   const objs = entities.toJS();
-  console.log(entities);
   return Object.keys(objs).map(key => objs[key]);
 };
 

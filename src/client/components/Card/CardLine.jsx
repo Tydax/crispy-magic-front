@@ -19,7 +19,6 @@ class CardLine extends React.Component {
   }
 
   render() {
-    console.log(this.props.card);
     return (
       <li className='cardline-item'>
           {this.props.card.manaCost
