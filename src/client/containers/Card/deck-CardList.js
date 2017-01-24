@@ -2,8 +2,14 @@ import { connect } from 'react-redux';
 
 import CardList from '../../components/Card/CardList';
 
+const convertCards = (entities) => {
+  const objs = entities.toJS();
+  console.log(entities);
+  return Object.keys(objs).map(key => objs[key]);
+};
+
 const mapStateToProps = state => ({
-  cards: state.entities.get('cards'),
+  cards: convertCards(state.entities.get('cards')),
 });
 
 const DeckCardList = connect(mapStateToProps)(CardList);

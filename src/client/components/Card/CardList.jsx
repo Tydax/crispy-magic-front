@@ -6,7 +6,7 @@ import { CardPropTypes } from '../../../shared/prop-types';
 import { capitalise } from '../../../shared/utils';
 
 const propTypes = {
-  cards: PropTypes.object,
+  cards: PropTypes.arrayOf(PropTypes.shape(CardPropTypes)),
   categories: PropTypes.arrayOf(React.PropTypes.string),
 };
 
@@ -21,7 +21,7 @@ class CardList extends React.Component {
       // Filter cards through categories
       const filters = category.split('&');
       const regex = new RegExp(filters.join('|'), 'i');
-      const filteredCards = this.props.cards.filter(card => regex.test(card.get('type')));
+      const filteredCards = this.props.cards.filter(card => regex.test(card.types[0]));
       const title = capitalise(filters.join(' & '));
 
       return <CardCategory title={title} cards={filteredCards} key={category}/>;

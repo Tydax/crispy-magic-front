@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
 
 const propTypes = {
-  name: PropTypes.string.isRequired,
-  imageUrl: PropTypes.string.isRequired,
+  name: CardPropTypes.name.isRequired,
+  imageUrl: CardPropTypes.imageUrl.isRequired,
 };
 
 const CardImage = function CardImage({ imageUrl }) {

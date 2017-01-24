@@ -6,16 +6,16 @@ import { CardPropTypes } from '../../../shared/prop-types';
 
 const propTypes = {
   title: PropTypes.string.isRequired,
-  cards: PropTypes.object,
+  cards: PropTypes.arrayOf(PropTypes.shape(CardPropTypes)),
 };
 
 const defaultProps = {
-  cards: List(),
+  cards: [],
 };
 
 class CardCategory extends React.Component {
   renderItems() {
-    return this.props.cards.map(card => <DeckCardLine card={card} key={card.get('id')}/>);
+    return this.props.cards.map(card => <DeckCardLine card={card} key={card.id}/>);
   }
 
   render() {

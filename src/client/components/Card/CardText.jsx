@@ -1,7 +1,9 @@
 import React, { PropTypes } from 'react';
 
+import { CardPropTypes } from '../../../shared/prop-types';
+
 const propTypes = {
-  text: PropTypes.string.isRequired,
+  text: CardPropTypes.text,
 };
 
 const CardText = function CardText({ text }) {
