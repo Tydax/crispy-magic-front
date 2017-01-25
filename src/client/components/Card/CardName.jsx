@@ -5,7 +5,11 @@ import { CardPropTypes } from '../../../shared/prop-types';
 
 const propTypes = {
   name: CardPropTypes.name.isRequired,
-  colours: PropTypes.arrayOf(CardPropTypes.colour).isRequired,
+  colours: PropTypes.arrayOf(CardPropTypes.colour),
+};
+
+const defaultProps = {
+  colours: ['colourless'],
 };
 
 const CardName = function CardName({ name, colours }) {
@@ -17,5 +21,6 @@ const CardName = function CardName({ name, colours }) {
 };
 
 CardName.propTypes = propTypes;
+CardName.defaultProps = defaultProps;
 
 export default CardName;

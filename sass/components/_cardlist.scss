@@ -1,0 +1,23 @@
+@import "../utils/_constants";
+
+.category-list {
+  > .title {
+    margin: $small-gld 0;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  > .cardline-list {
+    list-style: none;
+  }
+}
+
+.cardline-item {
+  display: flex;
+
+  > .mana-cost {
+    width: 20%;
+  }
+}
