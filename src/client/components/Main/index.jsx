@@ -2,16 +2,28 @@ import React, { PropTypes } from 'react'
 import NavBar from '../NavBar';
 import Footer from './Footer';
 
-const Main = function Main ({ children }) {
+const propTypes = {
+  golden: PropTypes.boolean,
+}
+
+const defaultProps = {
+  golden: false,
+}
+
+const Main = function Main ({ children, golden }) {
+  const goldenClass = golden ? ' -golden' : '';
   return (
     <div className='app'>
       <NavBar />
-      <main className='main-comp'>
+      <main className={`main-comp${goldenClass}`}>
         {children}
       </main>
       <Footer />
     </div>
   );
 };
+
+Main.propTypes = propTypes;
+Main.defaultProps = defaultProps;
 
 export default Main;
