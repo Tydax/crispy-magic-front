@@ -3,7 +3,7 @@ import NavBar from '../NavBar';
 import Footer from './Footer';
 
 const propTypes = {
-  golden: PropTypes.boolean,
+  golden: PropTypes.bool,
 }
 
 const defaultProps = {

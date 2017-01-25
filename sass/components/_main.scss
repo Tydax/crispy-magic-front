@@ -1,0 +1,32 @@
+@import "../utils/_constants";
+
+.main-comp {
+  padding: 1em 1%;
+  width: 100%;
+
+  &.-golden {
+    display: flex;
+    flex-flow: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+  }
+}
+
+.big-pane {
+  width: $gld10;
+}
+
+.small-pane {
+  width: $gld9;
+}
+
+.big-pane,
+.small-pane {
+  padding: 1.5em ;
+}
+
+.footer-comp {
+  font-size: $footer-font-size;
+  text-align: right;
+}

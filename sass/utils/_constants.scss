@@ -14,3 +14,12 @@ $nav-search-padding: 0.2em;
 $nav-title-fontsize: 1em;
 $nav-menu-fontsize: 0.8em;
 $nav-emph-colour: #edba3b;
+
+// Main variables
+$footer-font-size: 0.8em;
+
+// Golden values
+$golden: 1.618;
+$base: 100%;
+$gld10: $base / $golden;
+$gld9: $base - $gld10;
