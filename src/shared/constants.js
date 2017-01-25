@@ -12,7 +12,7 @@ const Routes = {
 };
 
 const Images = {
-  magnifyingIcon: 'img/icons/',
+  magnifyingIcon: 'img/icons/magnifying-glass.svg',
 };
 
 const cardParams = ['name', 'types', 'cmc'];

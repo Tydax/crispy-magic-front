@@ -13,8 +13,8 @@ NavSearchBarInput.propTypes = {
 
 const NavSearchButton = function NavSearchButton() {
   return (
-    <button className='search-button'>
-      <img src={Images.magnifyingIcon} alt='Search'/>
+    <button className='search-button' type="submit">
+      <div className='icon'></div>
     </button>
   );
 };

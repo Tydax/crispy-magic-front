@@ -14,11 +14,19 @@ li {
   padding: 0;
 }
 
-// li::after,
-// li::before {
-//   content: "";
-//   content: none;
-// }
+button,
+input {
+
+  &:focus {
+    outline: none;
+  }
+}
+
+li::after,
+li::before {
+  content: "";
+  content: none;
+}
 
 a {
   color: black;
