@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import { List } from 'immutable';
 
 import CardCategory from './CardCategory';
 import { CardPropTypes } from '../../../shared/prop-types';

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import CardPropTypes from '../../../shared/prop-types';
+import { CardPropTypes } from '../../../shared/prop-types';
 import CardButt from './CardButt';
 import CardImage from './CardImage';
 import CardName from './CardName';
@@ -27,8 +27,9 @@ class CardBlock extends React.Component {
 
   render() {
     const type = this.renderType();
+    console.log(this.props.card);
     return (
-      <div className='card-block'>
+      <li className='card-block-item'>
         <CardImage multiverseId={this.props.card.multiverseid} name={this.props.card.name} />
 
         <div className='card-information'>
@@ -37,7 +38,7 @@ class CardBlock extends React.Component {
           {type}
           <CardText text={this.props.card.text} />
         </div>
-      </div>
+      </li>
     );
   }
 }
