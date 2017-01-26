@@ -1,21 +1,38 @@
 @import "../utils/_constants";
 
-.category-list {
-  > .title {
-    margin: $small-gld 0;
+.card-list {
+  .deckname {
+    text-align: center;
+  }
+}
 
-    &:first-of-type {
-      margin-top: 0;
-    }
+.category-list {
+  background: $cardlist-bg-colour;
+
+  > .title {
+    margin-bottom: $small-gld;
   }
 
   > .cardline-list {
+    margin-left: $small-gld;
     list-style: none;
   }
 }
 
 .cardline-item {
+  $border: 1px solid darken($cardlist-bg-colour, 10%);
+  border-bottom: $border;
   display: flex;
+  padding: 0.2em 0;
+  transition: $trans-time background;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background: darken($cardlist-bg-colour, 5%);
+  }
 
   > .mana-cost {
     width: 20%;
