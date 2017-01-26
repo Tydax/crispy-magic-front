@@ -8,7 +8,7 @@ const CardPropTypes = {
   manaCost: PropTypes.string,
   numberCopies: PropTypes.number,
   rarity: PropTypes.string,
-  imageUrl: PropTypes.string,
+  multiverseId: PropTypes.number,
   text: PropTypes.string,
 };
 

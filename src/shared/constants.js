@@ -25,4 +25,9 @@ const ApiUrl = {
   }
 };
 
-export { Routes, Images, ApiUrl };
+const ImageUrl = (multiverseId) => {
+  return `http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=${multiverseId}&type=card`
+};
+
+
+export { Routes, Images, ApiUrl, ImageUrl };

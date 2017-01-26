@@ -29,13 +29,13 @@ class CardBlock extends React.Component {
     const type = this.renderType();
     return (
       <div className='card-block'>
-        <CardImage imageUrl={this.props.cardimageUrl} name={this.props.cardname} />
+        <CardImage multiverseId={this.props.card.multiverseid} name={this.props.card.name} />
 
         <div className='card-information'>
           <CardButt action={() => this.props.onClickAdd(this.props.card.id)} label="+" />
-          <CardName name={this.props.cardname} colour={this.props.cardcolour} />
+          <CardName name={this.props.card.name} colours={this.props.card.colors} />
           {type}
-          <CardText text={this.props.cardtext} />
+          <CardText text={this.props.card.text} />
         </div>
       </div>
     );

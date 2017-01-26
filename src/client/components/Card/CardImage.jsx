@@ -1,14 +1,17 @@
 import React, { PropTypes } from 'react';
 
+import { CardPropTypes } from '../../../shared/prop-types';
+import { ImageUrl } from '../../../shared/constants';
+
 const propTypes = {
   name: CardPropTypes.name.isRequired,
-  imageUrl: CardPropTypes.imageUrl.isRequired,
+  multiverseId: CardPropTypes.multiverseId.isRequired,
 };
 
-const CardImage = function CardImage({ imageUrl }) {
+const CardImage = function CardImage({ name, multiverseId }) {
   return (
     <div className='card-image'>
-      <img className='image' src={imageUrl} alt={name} />
+      <img className='image' src={ImageUrl(multiverseId)} alt={name} />
     </div>
   );
 };
