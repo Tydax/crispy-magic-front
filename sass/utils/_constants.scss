@@ -21,6 +21,9 @@ $nav-emph-colour: #AAA;
 // Main variables
 $footer-font-size: 0.8em;
 
+// Card list variables
+$cardlist-bg-colour: white;
+
 // Icon paths
 $icon-magnifying-glass: '../img/icons/magnifying-glass.svg';
 
@@ -29,3 +32,4 @@ $golden: 1.618;
 $base: 100%;
 $gld10: $base / $golden;
 $gld9: $base - $gld10;
+$small-gld: 1.5em;

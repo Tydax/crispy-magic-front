@@ -7,6 +7,7 @@ import { capitalise } from '../../../shared/utils';
 const propTypes = {
   cards: PropTypes.arrayOf(PropTypes.shape(CardPropTypes)),
   categories: PropTypes.arrayOf(React.PropTypes.string),
+  deckName: PropTypes.string.isRequired,
 };
 
 const defaultProps = {
@@ -31,6 +32,7 @@ class CardList extends React.Component {
     const listCategories = this.renderCategories();
     return (
       <div className='card-list'>
+        <h2 className='deckname'>{this.props.deckName}</h2>
         {listCategories}
       </div>
     );

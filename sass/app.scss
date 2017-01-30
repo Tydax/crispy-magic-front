@@ -1,6 +1,7 @@
 @import "utils/_reset";
-@import "components/_navbar";
+@import "components/_cardlist";
 @import "components/_main";
+@import "components/_navbar";
 
 #root {
   font-family: $main-font;

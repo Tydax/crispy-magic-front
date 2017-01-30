@@ -7,6 +7,7 @@ import DeckCardList from '../containers/Card/deck-CardList';
 import SearchCardBlockList from '../containers/Card/search-CardBlockList';
 import CardBlockList from '../components/Card/CardBlockList';
 
+// TODO remove placeholder name
 const DeckBuilder = function DeckBuilder() {
   return (
     <Main golden={true}>
@@ -14,7 +15,9 @@ const DeckBuilder = function DeckBuilder() {
         <SearchCardBlockList />
       </BigPane>
       <SmallPane>
-        <DeckCardList categories={['creature&planeswalker', 'artefact&enchantment', 'land']} />
+        <DeckCardList
+          categories={['creature&planeswalker', 'artefact&enchantment', 'land']}
+          deckName="Nom du deck"/>
       </SmallPane>
     </Main>
   );
