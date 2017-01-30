@@ -5,14 +5,20 @@ import { ImageUrl } from '../../../shared/constants';
 
 const propTypes = {
   name: CardPropTypes.name.isRequired,
-  multiverseId: CardPropTypes.multiverseId.isRequired,
+  multiverseId: CardPropTypes.multiverseId,
 };
 
-const CardImage = function CardImage({ name, multiverseId }) {
+const CardImage = function CardImage(props) {
+  if (props.multiverseId)
+    return (
+      <div className='card-image'>
+        <img className='image' src={ImageUrl(props.multiverseId)} alt={props.name} />
+      </div>
+    );
   return (
-    <div className='card-image'>
-      <img className='image' src={ImageUrl(multiverseId)} alt={name} />
-    </div>
+      <div className='card-image'>
+        <img className='image' src="img/cardback.jpg" alt={props.name} />
+      </div>
   );
 };
 

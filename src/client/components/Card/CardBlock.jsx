@@ -31,7 +31,7 @@ class CardBlock extends React.Component {
     const type = this.renderType();
     return (
       <li className='card-block-item'>
-        {this.props.card.multiverseid && <CardImage multiverseId={this.props.card.multiverseid} name={this.props.card.name} />}
+        {this.props.card.multiverseid ? <CardImage multiverseId={this.props.card.multiverseid} name={this.props.card.name} /> : <CardImage name={this.props.card.name} />}
 
         <div className='card-information'>
           <CardName name={this.props.card.name} colours={this.props.card.colors || this.props.card.colorIdentity} />
