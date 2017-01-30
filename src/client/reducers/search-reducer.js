@@ -1,6 +1,6 @@
 import { fromJS } from 'immutable';
 
-import { UPDATE_SEARCH_VALUE } from '../actions/entity-actions';
+import { UPDATE_SEARCH_VALUE } from '../actions/search-actions';
 
 const searchInitialState = fromJS({
   value: '',
