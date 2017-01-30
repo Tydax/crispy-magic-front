@@ -33,3 +33,17 @@ $base: 100%;
 $gld10: $base / $golden;
 $gld9: $base - $gld10;
 $small-gld: 1.5em;
+
+// Magic colours
+$black: black;
+$blue: #4172AC;
+$green: #18AA53;
+$red: #EA2F22;
+$white: #B0AC9A;
+$yellow: #E69C3E;
+
+// Magic rarity
+$common: black;
+$uncommon: #577784;
+$rare: #AD9760;
+$mythic: #C85627;
