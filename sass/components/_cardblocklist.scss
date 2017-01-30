@@ -1,0 +1,61 @@
+@import "../utils/_constants";
+
+.card-block-list {
+  list-style: none;
+
+}
+
+.card-block-item {
+  background: $cardblock-bg-colour;
+  // box-shadow: 2px 2px 2px darken($cardblock-bg-colour, 20%);
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1em 0;
+  width: 100%;
+
+  > .card-image {
+    width: $gld9 - 10%;
+  }
+
+  > .card-image > .image {
+    width: 100%;
+  }
+
+  > .card-information {
+    margin-left: 3%;
+    width: $gld10;
+  }
+
+  > .card-information > .name {
+    font-size: 1.3em;
+  }
+
+  > .card-information > .type {
+    color: $emph-colour;
+  }
+
+  > .card-information > .type,
+  > .card-information > .text-container > .text {
+    font-size: 0.9em;
+    margin-left: 0.01em;
+  }
+
+  > .card-button {
+    background: darken($cardblock-bg-colour, 5%);
+    border: none;
+    box-shadow: 2px 2px 2px darken($cardblock-bg-colour, 20%);
+    color: $nav-colour;
+    cursor: pointer;
+    display: inline-block;
+    height: 3vw;
+    font-size: 1em;
+    transition: $trans-time background;
+    width: 3vw;
+  }
+
+  > .card-button:hover {
+    background: lighten($nav-emph-colour, 20%);
+  }
+}

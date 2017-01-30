@@ -4,6 +4,8 @@
 $main-font: 'Raleway', Tahoma, sans-serif;
 $trans-time: 0.4s;
 
+$emph-colour: #AAA;
+
 // Navbar variables
 $nav-bg-colour: white;
 $nav-colour: #333;
@@ -16,13 +18,14 @@ $nav-menu-fontsize: 0.8em;
 $nav-menu-fontsize-bigger: $nav-menu-fontsize + 0.2em;
 $nav-profile-fontsize: 0.9em;
 $nav-profile-fontsize-bigger: $nav-profile-fontsize + 0.2em;
-$nav-emph-colour: #AAA;
+$nav-emph-colour: $emph-colour;
 
 // Main variables
 $footer-font-size: 0.8em;
 
 // Card list variables
 $cardlist-bg-colour: white;
+$cardblock-bg-colour: white;
 
 // Icon paths
 $icon-magnifying-glass: '../img/icons/magnifying-glass.svg';
