@@ -25,4 +25,13 @@ const convertArgs = function convertArgs(args: Map<string, string>, ...possibleV
   return params.filter(param => param).join('&');
 };
 
-export { capitalise, convertArgs };
+const fetchEntityData = function fetchEntityData(state, container, entityType) {
+  const entityIds = state.containers.get(container).get('data').get(entityType);
+  const entities = entityIds.map(id => (
+    state.entities.get(entityType).get(id).toJS()
+  ));
+  return entities.toJS();
+};
+
+
+export { capitalise, convertArgs, fetchEntityData };
