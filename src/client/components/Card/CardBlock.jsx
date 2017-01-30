@@ -28,6 +28,7 @@ class CardBlock extends React.Component {
 
   render() {
     const type = this.renderType();
+    console.log('this.props.card');
     console.log(this.props.card);
     return (
       <li className='card-block-item'>

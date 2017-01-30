@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
 import { Routes } from '../../../shared/constants';
-import NavSearchBar from './NavSearchBar';
+import NavSearchBar from '../../containers/NavSearchBar';
 import NavProfile from './NavProfile';
 
 const otherMenuItemsPropTypes = {
@@ -14,7 +14,6 @@ const otherMenuItemsPropTypes = {
 const propTypes = {
   otherMenuItems: PropTypes.arrayOf(otherMenuItemsPropTypes.item),
   user: PropTypes.shape({}),
-  searchValue: PropTypes.string,
 };
 
 const defaultProps = {
@@ -56,7 +55,7 @@ class NavBar extends React.Component {
       <nav className='nav-bar'>
         <ul className='menu-list'>
           {appTitle}
-          <NavSearchBar value={this.props.searchValue} />
+          <NavSearchBar />
           <li className='menu-item'>
             <ul className='other-menu-list'>
               {menuItems}

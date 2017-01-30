@@ -86,58 +86,66 @@
   transition: $trans-time width;
   width: 30%;
 
-  > .field,
-  > .search-button {
-    background: darken($nav-bg-colour, 5%);
-    border: none;
-    box-shadow: 2px 2px 2px darken($nav-bg-colour, 20%);
-    display: inline-block;
-    font-size: $nav-search-fontsize;
+  > .form-search {
     height: 100%;
+    width: 100%;
   }
+}
 
-  > .field {
-    border-top-left-radius: 1px;
-    border-bottom-left-radius: 1px;
-    float: left;
-    padding: $nav-search-padding 2%;
-    transition: 0.2s box-shadow;
-    width: 85%;
-  }
+.form-search {
 
-  > .field:focus {
-    box-shadow:
-      2px 2px 2px darken($nav-bg-colour, 20%),
-      0 0 4px 0 grey inset;
-  }
-
-  > .search-button {
-    background: darken($nav-bg-colour, 5%);
-
-    border-top-right-radius: 1px;
-    border-bottom-right-radius: 1px;
-    color: $nav-colour;
-    cursor: pointer;
-    padding: 0.6em 2%;
-    transition:
-      $trans-time background,
-      $trans-time color;
-    width: 15%;
-
-    > .icon {
-      background-image: url($icon-magnifying-glass);
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-      text-align: center;
+    > .field,
+    > .search-button {
+      background: darken($nav-bg-colour, 5%);
+      border: none;
+      box-shadow: 2px 2px 2px darken($nav-bg-colour, 20%);
+      display: inline-block;
+      font-size: $nav-search-fontsize;
       height: 100%;
-      width: 100%;
     }
 
-    &:hover {
-      background: lighten($nav-emph-colour, 20%);
-      color: darken($nav-emph-colour, 10%);
+    > .field {
+      border-top-left-radius: 1px;
+      border-bottom-left-radius: 1px;
+      float: left;
+      padding: $nav-search-padding 2%;
+      transition: 0.2s box-shadow;
+      width: 85%;
     }
-  }
+
+    > .field:focus {
+      box-shadow:
+        2px 2px 2px darken($nav-bg-colour, 20%),
+        0 0 4px 0 grey inset;
+    }
+
+    > .search-button {
+      background: darken($nav-bg-colour, 5%);
+
+      border-top-right-radius: 1px;
+      border-bottom-right-radius: 1px;
+      color: $nav-colour;
+      cursor: pointer;
+      padding: 0.6em 2%;
+      transition:
+        $trans-time background,
+        $trans-time color;
+      width: 15%;
+
+      > .icon {
+        background-image: url($icon-magnifying-glass);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+      }
+
+      &:hover {
+        background: lighten($nav-emph-colour, 20%);
+        color: darken($nav-emph-colour, 10%);
+      }
+    }
 }
 
 .nav-profile {
