@@ -20,22 +20,6 @@ const store = createStore(
     loggerMiddleware
 ));
 
-const criteria = {
-  name: 'gideon',
-  types: 'cp',
-};
-
-store.dispatch(fetchEntities('cards', criteria, 'search')).then(() =>
-  console.log(store.getState())
-);
-
-criteria.name = 'plain';
-criteria.types = 'l';
-
-store.dispatch(fetchEntities('cards', criteria, 'deck')).then(() =>
-  console.log(store.getState())
-);
-
 ReactDOM.render(
   <Provider store={store}>
     <DeckBuilder />
