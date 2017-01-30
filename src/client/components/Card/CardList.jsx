@@ -5,6 +5,7 @@ import { CardPropTypes } from '../../../shared/prop-types';
 import { capitalise } from '../../../shared/utils';
 
 const propTypes = {
+  containerToAdd: PropTypes.string.isRequired,
   cards: PropTypes.arrayOf(PropTypes.shape(CardPropTypes)),
   categories: PropTypes.arrayOf(React.PropTypes.string),
   deckName: PropTypes.string.isRequired,
@@ -24,7 +25,7 @@ class CardList extends React.Component {
       const filteredCards = this.props.cards.filter(card => regex.test(card.types[0]));
       const title = capitalise(filters.join(' & '));
 
-      return <CardCategory title={title} cards={filteredCards} key={category}/>;
+      return <CardCategory containerToAdd={this.props.containerToAdd} title={title} cards={filteredCards} key={category}/>;
     });
   }
 

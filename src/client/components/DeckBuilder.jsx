@@ -16,6 +16,7 @@ const DeckBuilder = function DeckBuilder() {
       </BigPane>
       <SmallPane>
         <DeckCardList
+          containerToAdd="deckbuilder"
           categories={['creature&planeswalker', 'artefact&enchantment', 'land']}
           deckName="Nom du deck"/>
       </SmallPane>

@@ -1,10 +1,11 @@
 import React, { PropTypes } from 'react';
 import { List } from 'immutable';
 
-import DeckCardLine from '../../containers/Card/deck-CardLine';
+import AddableCardLine from '../../containers/Card/addable-CardLine';
 import { CardPropTypes } from '../../../shared/prop-types';
 
 const propTypes = {
+  containerToAdd: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   cards: PropTypes.arrayOf(PropTypes.shape(CardPropTypes)),
 };
@@ -15,7 +16,11 @@ const defaultProps = {
 
 class CardCategory extends React.Component {
   renderItems() {
-    return this.props.cards.map(card => <DeckCardLine card={card} key={card.id}/>);
+    return this.props.cards.map(card => (<AddableCardLine
+      containerToAdd={this.props.containerToAdd}
+      card={card}
+      key={card.id}/>
+    ));
   }
 
   render() {

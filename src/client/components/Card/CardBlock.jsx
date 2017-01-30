@@ -34,7 +34,7 @@ class CardBlock extends React.Component {
         {this.props.card.multiverseid && <CardImage multiverseId={this.props.card.multiverseid} name={this.props.card.name} />}
 
         <div className='card-information'>
-          <CardButt action={() => this.props.onClickAdd(this.props.card.id)} label="+" />
+          <CardButt action={() => this.props.onClickAdd(this.props.containerToAdd, this.props.card.id)} label="+" />
           <CardName name={this.props.card.name} colours={this.props.card.colors || this.props.card.colorIdentity} />
           {type}
           <CardText text={this.props.card.text} />

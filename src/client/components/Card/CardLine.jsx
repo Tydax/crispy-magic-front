@@ -8,6 +8,7 @@ import { capitalise } from '../../../shared/utils';
 import { CardPropTypes } from '../../../shared/prop-types';
 
 const propTypes = {
+  containerToAdd: PropTypes.string.isRequired,
   card: PropTypes.shape(CardPropTypes).isRequired,
   onAddCopy: PropTypes.func.isRequired,
   onRemoveCopy: PropTypes.func.isRequired,
@@ -25,8 +26,14 @@ class CardLine extends React.Component {
             && <CardCost cost={this.props.card.manaCost} />}
           <CardName name={this.props.card.name} colours={this.props.card.colors || this.props.card.colorIdentity} />
           <CardCopy numberCopies={this.props.card.numberCopies} rarity={this.props.card.rarity} />
-          <CardButt action={() => this.props.onAddCopy(this.props.card.id)} variants={['-small', 'add-button']} label="+" />
-          <CardButt action={() => this.props.onRemoveCopy(this.props.card.id)} variants={['-small', 'minus-button']} label="–" />
+          <CardButt
+            action={() => this.props.onAddCopy(this.props.containerToAdd, this.props.card.id)}
+            variants={['-small', 'add-button']}
+            label="+" />
+          <CardButt
+            action={() => this.props.onRemoveCopy(this.props.containerToAdd, this.props.card.id)}
+            variants={['-small', 'minus-button']}
+            label="–" />
         </li>
       );
     }
