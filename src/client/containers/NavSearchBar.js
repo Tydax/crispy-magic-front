@@ -14,10 +14,10 @@ const mapDispatchToProps = dispatch => ({
   onSubmit: (event, input) => {
     event.preventDefault();
     return dispatch(fetchEntities(
-    'cards',
-    generateCriteria(input),
-    'search')
-  )},
+      'cards',
+      generateCriteria(input),
+      'search'));
+  },
   onChangeValue: value => dispatch(updateSearchValue(value)),
 });
 

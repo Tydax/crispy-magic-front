@@ -28,11 +28,9 @@ class CardBlock extends React.Component {
 
   render() {
     const type = this.renderType();
-    console.log('this.props.card');
-    console.log(this.props.card);
     return (
       <li className='card-block-item'>
-        <CardImage multiverseId={this.props.card.multiverseid} name={this.props.card.name} />
+        {this.props.card.multiverseid && <CardImage multiverseId={this.props.card.multiverseid} name={this.props.card.name} />}
 
         <div className='card-information'>
           <CardButt action={() => this.props.onClickAdd(this.props.card.id)} label="+" />
