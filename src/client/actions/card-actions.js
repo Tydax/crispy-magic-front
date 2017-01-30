@@ -1,22 +1,24 @@
-const ADD_CARD_COPY = 'ADD_CARD_COPY';
-const addCardCopy = (id, amount) => ({
-  type: ADD_CARD_COPY,
+const ADD_CARD = 'ADD_CARD';
+const addCard = (container, id, amount) => ({
+  type: ADD_CARD,
   payload: {
+    container,
     id,
     amount,
   },
 });
 
-const REMOVE_CARD_COPY = 'REMOVE_CARD_COPY';
-const removeCardCopy = (id, amount) => ({
-  type: REMOVE_CARD_COPY,
+const REMOVE_CARD = 'REMOVE_CARD';
+const removeCard = (container, id, amount) => ({
+  type: REMOVE_CARD,
   payload: {
+    container,
     id,
     amount,
   },
 });
 
 export {
-  ADD_CARD_COPY, addCardCopy,
-  REMOVE_CARD_COPY,  removeCardCopy,
+  ADD_CARD, addCard,
+  REMOVE_CARD,  removeCard,
 };

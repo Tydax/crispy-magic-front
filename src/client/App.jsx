@@ -25,7 +25,7 @@ const criteria = {
   types: 'cp',
 };
 
-store.dispatch(fetchEntities('cards', criteria, 'deck')).then(() =>
+store.dispatch(fetchEntities('cards', criteria, 'search')).then(() =>
   console.log(store.getState())
 );
 

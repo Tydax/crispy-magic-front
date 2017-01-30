@@ -13,8 +13,6 @@ const defaultProps = {
 
 class CardBlockList extends React.Component {
   renderCardBlocks() {
-    console.log('nique ta mère');
-    console.log(this.props.cards);
     return this.props.cards.map(card => (
       <CardBlock
         key={card.id}

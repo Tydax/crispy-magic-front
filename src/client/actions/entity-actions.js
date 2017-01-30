@@ -28,9 +28,17 @@ const fetchEntities = (entityType, criteria, container) => (dispatch) => {
     })
     .then(json => {
       dispatch(receiveEntities(entityType, json));
-      dispatch(finishFetchingContainer(container, json.map(entity => entity.id)));
+      let entityIds;
+      if (entityType == 'cards') {
+        entityIds = json.reduce((arr, sets) => arr.concat(
+          sets.cards.map(card => card.id)
+        ), []);
+      } else {
+        entityIds = json.map(entity => entity.id);
+      }
+      dispatch(finishFetchingContainer(container, entityType, entityIds));
     })
-    // .catch(error => dispatch(failFetchingContainer(container, entityType, error)));
+    .catch(error => dispatch(failFetchingContainer(container, entityType, error)));
 };
 
 export {

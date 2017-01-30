@@ -1,5 +1,5 @@
 const INVALIDATE_CONTAINER = 'INVALIDATE_CONTAINER';
-const invalidateContainer = (container, entityType) => ({
+const invalidateContainer = (container) => ({
   type: INVALIDATE_CONTAINER,
   payload: {
     container,
@@ -14,10 +14,11 @@ const beginFetchingContainer = (container) => ({
 });
 
 const FINISH_FETCHING_CONTAINER = 'FINISH_FETCHING_CONTAINER';
-const finishFetchingContainer = (container, entityIds) => ({
+const finishFetchingContainer = (container, entityType, entityIds) => ({
   type: FINISH_FETCHING_CONTAINER,
   payload: {
     container,
+    entityType,
     entityIds,
   }
 });
