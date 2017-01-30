@@ -9,6 +9,7 @@ import CardText from './CardText';
 const propTypes = {
   id: CardPropTypes.id,
   card: PropTypes.shape(CardPropTypes).isRequired,
+  containerToAdd: PropTypes.string.isRequired,
   onClickAdd: PropTypes.func.isRequired,
   compact: PropTypes.bool,
 };

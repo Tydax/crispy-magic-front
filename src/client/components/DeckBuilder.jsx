@@ -12,7 +12,7 @@ const DeckBuilder = function DeckBuilder() {
   return (
     <Main golden={true}>
       <BigPane>
-        <SearchCardBlockList />
+        <SearchCardBlockList containerToAdd="deckbuilder"/>
       </BigPane>
       <SmallPane>
         <DeckCardList

@@ -1,10 +1,11 @@
 import React, { PropTypes } from 'react';
 
-import CardBlock from './CardBlock';
+import SearchCardBlock from '../../containers/Card/search-CardBlock';
 import { CardPropTypes } from '../../../shared/prop-types';
 
 const propTypes = {
   cards: PropTypes.arrayOf(PropTypes.shape(CardPropTypes)),
+  containerToAdd: PropTypes.string.isRequired,
 };
 
 const defaultProps = {
@@ -14,10 +15,10 @@ const defaultProps = {
 class CardBlockList extends React.Component {
   renderCardBlocks() {
     return this.props.cards.map(card => (
-      <CardBlock
+      <SearchCardBlock
+        containerToAdd={this.props.containerToAdd}
         key={card.id}
         card={card}
-        onClickAdd={id => alert(`ID de carte : ${id}`)}
         compact={false} />
     ));
   }

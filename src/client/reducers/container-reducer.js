@@ -7,24 +7,20 @@ import {
   FAIL_FETCHING_CONTAINER } from '../actions/container-actions';
 import { ADD_CARD, REMOVE_CARD } from '../actions/card-actions';
 
-const containerInitialState = {
+const containerInitialState = (initialCardsData = []) => ({
   isFetching: false,
   lastSaved: undefined,
   error: undefined,
   data: {
-    cards: [],
+    cards: initialCardsData,
   },
-};
-
-const containersInitialState = fromJS({
-  deckbuilder: containerInitialState,
-  library: containerInitialState,
-  search: containerInitialState,
 });
 
-const injectDataInContainer = (container, action) => {
-
-};
+const containersInitialState = fromJS({
+  deckbuilder: containerInitialState({}),
+  library: containerInitialState(),
+  search: containerInitialState(),
+});
 
 const containerReducer = (state = containersInitialState, action) => {
   switch (action.type) {
@@ -47,6 +43,34 @@ const containerReducer = (state = containersInitialState, action) => {
         container.set('isFetching', false)
           .set('error', action.error)
         ));
+
+    case ADD_CARD:
+    console.log('ADD_CARD');
+      return state.update(action.payload.container, container => (
+        container.update('data', data => data
+          .update('cards', cards => {
+            console.log(cards.get(action.payload.id));
+            console.log(cards.update(action.payload.id, value => value + action.payload.amount));
+            if (cards.get(action.payload.id)) {
+              return cards.update(action.payload.id, value => value + action.payload.amount);
+            } else {
+              return cards.set(action.payload.id, action.payload.amount);
+            }
+          }))
+      ));
+
+    case REMOVE_CARD:
+      return state.update(action.payload.container, container => (
+        container.update('data', data => data
+          .update('cards', cards => {
+            const newAmount = cards.get(action.payload.id) - action.payload.amount
+            if (newAmount > 0) {
+              return cards.update(action.payload.id, newAmount);
+            } else {
+              return cards.remove(action.payload.id);
+            }
+          }))
+      ));
 
     default: return state;
   }
