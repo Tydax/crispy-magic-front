@@ -65,7 +65,7 @@ const containerReducer = (state = containersInitialState, action) => {
           .update('cards', cards => {
             const newAmount = cards.get(action.payload.id) - action.payload.amount
             if (newAmount > 0) {
-              return cards.update(action.payload.id, newAmount);
+              return cards.set(action.payload.id, newAmount);
             } else {
               return cards.remove(action.payload.id);
             }
