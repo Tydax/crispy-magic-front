@@ -12,7 +12,7 @@
     "Adrien (Narxem) Agez <adrien.agez@hotmail.fr>"
   ],
   "scripts": {
-    "start": "gulp webpack-server-dev"
+    "start": "gulp main"
   },
   "babel": {
     "presets": [
