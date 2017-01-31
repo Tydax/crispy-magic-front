@@ -83,11 +83,11 @@ gulp.task('main', ['build', 'sass', 'copylibs'], () =>
 );
 
 // Watching change in the repository
-/*
 gulp.task('watch', () =>
   gulp.watch([paths.allSrcJs, paths.allSrcSass], ['main'])
 );
 
+/*
 gulp.task('webpack-server-dev', ['build', 'sass', 'copylibs'], () => {
   var devConfig = Object.create(webpackConfig);
 	devConfig.devtool = 'eval';
@@ -107,4 +107,4 @@ gulp.task('webpack-server-dev', ['build', 'sass', 'copylibs'], () => {
   });
 });
 */
-gulp.task('default', ['watch', 'main', 'webpack-server-dev']);
+gulp.task('default', ['watch', 'main']);
