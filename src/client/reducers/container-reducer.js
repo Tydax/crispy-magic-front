@@ -6,18 +6,20 @@ import {
   FINISH_FETCHING_CONTAINER,
   FAIL_FETCHING_CONTAINER } from '../actions/container-actions';
 import { ADD_CARD, REMOVE_CARD } from '../actions/card-actions';
+import { UPDATE_DECK_NAME } from '../actions/deck-actions';
 
-const containerInitialState = (initialCardsData = []) => ({
+const containerInitialState = (initialCardsData = { cards: []}) => ({
   isFetching: false,
   lastSaved: undefined,
   error: undefined,
-  data: {
-    cards: initialCardsData,
-  },
+  data: initialCardsData,
 });
 
 const containersInitialState = fromJS({
-  deckbuilder: containerInitialState({}),
+  deckbuilder: containerInitialState({
+    cards: {},
+    name: '',
+  }),
   library: containerInitialState(),
   search: containerInitialState(),
 });
@@ -70,6 +72,13 @@ const containerReducer = (state = containersInitialState, action) => {
               return cards.remove(action.payload.id);
             }
           }))
+      ));
+
+    case UPDATE_DECK_NAME:
+      return state.update('deck', container => (
+        container.update('data', data => data
+          .update('name', action.payload)
+        )
       ));
 
     default: return state;

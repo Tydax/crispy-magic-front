@@ -1,10 +1,13 @@
 import gulp from 'gulp';
+import gutil from 'gulp-util';
 import babel from 'gulp-babel';
 import sass from 'gulp-sass';
 import autoprefixer from 'gulp-autoprefixer';
 import del from 'del';
 import flow from 'gulp-flowtype';
+// import webpack from 'webpack';
 import webpack from 'webpack-stream';
+// import WebpackDevServer from 'webpack-dev-server';
 import webpackConfig from './webpack.config.babel';
 
 const paths = {
@@ -72,7 +75,7 @@ gulp.task('copylibs', ['clean'], () => {
   );
 });
 
-// Bundling in webpack task
+// // Bundling in webpack task
 gulp.task('main', ['build', 'sass', 'copylibs'], () =>
   gulp.src(paths.clientEntryPoint)
     .pipe(webpack(webpackConfig))
@@ -80,8 +83,28 @@ gulp.task('main', ['build', 'sass', 'copylibs'], () =>
 );
 
 // Watching change in the repository
+/*
 gulp.task('watch', () =>
   gulp.watch([paths.allSrcJs, paths.allSrcSass], ['main'])
 );
 
-gulp.task('default', ['watch', 'main']);
+gulp.task('webpack-server-dev', ['build', 'sass', 'copylibs'], () => {
+  var devConfig = Object.create(webpackConfig);
+	devConfig.devtool = 'eval';
+	devConfig.debug = true;
+
+  new WebpackDevServer(webpack(devConfig), {
+    publicPath: `/${webpackConfig.output.publicPath}`,
+    stats: {
+      colors: true
+    }
+  }).listen(1337, 'localhost', (err) => {
+    if (err) {
+      throw new gutil.PluginError("webpack-dev-server", err);
+    }
+
+    gutil.log('[webpack-dev-server]', 'http://localhost:1337/');
+  });
+});
+*/
+gulp.task('default', ['watch', 'main', 'webpack-server-dev']);

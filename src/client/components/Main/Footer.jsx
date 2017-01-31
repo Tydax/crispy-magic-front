@@ -4,7 +4,7 @@ import React from 'react';
 const Footer = function Footer({ children }) {
   return (
     <footer className='footer-comp'>
-      <h6 className='license'>Très le copyright</h6>
+      <span className='license'></span>
     </footer>
   );
 };

@@ -4,9 +4,9 @@ import Main from './Main';
 
 const Home = function Home() {
   return (
-    <Main>
+    <div className='home-page'>
       <h1 className='title'>Bienvenue sur Crispy Magic !</h1>
-    </Main>
+    </div>
   );
 };
 

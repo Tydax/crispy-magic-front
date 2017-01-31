@@ -2,7 +2,23 @@
 
 .card-list {
   .deckname {
+    $colour: lighten(black, 45%);
+    border: none;
+    border-bottom: 2px solid $colour;
+    color: $colour;
+    display: block;
+    font-size: 1.5em;
+    margin-bottom: $small-gld;
     text-align: center;
+    transition:
+      $trans-time box-shadow,
+      $trans-time border-bottom;
+  }
+
+  .deckname:focus {
+    background: darken($nav-bg-colour, 5%);
+    border-bottom: none;
+    box-shadow: 2px 2px 2px darken($nav-bg-colour, 20%);
   }
 }
 

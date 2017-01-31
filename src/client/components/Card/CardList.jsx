@@ -8,12 +8,14 @@ const propTypes = {
   containerToAdd: PropTypes.string.isRequired,
   cards: PropTypes.arrayOf(PropTypes.shape(CardPropTypes)),
   categories: PropTypes.arrayOf(React.PropTypes.string),
-  deckName: PropTypes.string.isRequired,
+  deckName: PropTypes.string,
+  onChangeDeckname: PropTypes.func,
 };
 
 const defaultProps = {
   cards: [],
   categories: ['creature', 'artefact&enchantment', 'land'],
+  deckName: '',
 };
 
 class CardList extends React.Component {
@@ -33,7 +35,10 @@ class CardList extends React.Component {
     const listCategories = this.renderCategories();
     return (
       <div className='card-list'>
-        <h2 className='deckname'>{this.props.deckName}</h2>
+        <input type="text" className='deckname'
+          value={this.props.deckName}
+          placeholder="Nom du deck"
+          onChange={evt => onChangeDeckname(evt.target.value)}/>
         {listCategories}
       </div>
     );
