@@ -39,3 +39,28 @@
 .-mythic {
   color: $mythic;
 }
+
+
+.card-button {
+  $size: 3vw;
+  background: darken($cardblock-bg-colour, 5%);
+  border: none;
+  box-shadow: 2px 2px 2px darken($cardblock-bg-colour, 20%);
+  color: $nav-colour;
+  cursor: pointer;
+  display: inline-block;
+  height: $size;
+  font-size: 1em;
+  transition: $trans-time background;
+  width: $size;
+
+  &:hover {
+    background: lighten($nav-emph-colour, 20%);
+  }
+
+  &.-small {
+    $size-small: 2vw;
+    height: $size-small;
+    width: $size-small;
+  }
+}

@@ -41,21 +41,4 @@
     font-size: 0.9em;
     margin-left: 0.01em;
   }
-
-  > .card-button {
-    background: darken($cardblock-bg-colour, 5%);
-    border: none;
-    box-shadow: 2px 2px 2px darken($cardblock-bg-colour, 20%);
-    color: $nav-colour;
-    cursor: pointer;
-    display: inline-block;
-    height: 3vw;
-    font-size: 1em;
-    transition: $trans-time background;
-    width: 3vw;
-  }
-
-  > .card-button:hover {
-    background: lighten($nav-emph-colour, 20%);
-  }
 }

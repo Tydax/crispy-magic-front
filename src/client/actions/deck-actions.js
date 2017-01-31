@@ -25,7 +25,7 @@ const saveDeck = (deck) => {
       throw new Error('Bad response from server');
     }
     dispatch(finishFetchingContainer('deckbuilder'));
-  );
+  });
 };
 
 export {
