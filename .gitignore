@@ -37,9 +37,7 @@ jspm_packages
 .node_repl_history
 
 lib/
-dist/libs
-dist/client-bundle.js*
-dist/css
+css/
 
 yarn*
 !yarn.lock
