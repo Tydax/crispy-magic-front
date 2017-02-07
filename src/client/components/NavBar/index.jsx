@@ -18,12 +18,17 @@ const propTypes = {
 };
 
 const defaultProps = {
+  // otherMenuItems: [{
+  //     label: 'Ma bibliothèque',
+  //     route: Routes.myLibrary,
+  //   }, {
+  //     label: 'Mes decks',
+  //     route: Routes.myDecks,
+  //   },
+  // ],
   otherMenuItems: [{
-      label: 'Ma bibliothèque',
-      route: Routes.myLibrary,
-    }, {
-      label: 'Mes decks',
-      route: Routes.myDecks,
+      label: 'Deckbuilder',
+      route: Routes.deckBuilder,
     },
   ],
 };

@@ -6,7 +6,7 @@ const Routes = {
   home: '/',
   myLibrary: '/library/',
   myDecks: '/deck/',
-  deckBuilder: '/deck/:deckId',
+  deckBuilder: '/deck/new',
   signUp: '/',
   signIn: '/',
   signOut: '/',
