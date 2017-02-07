@@ -75,9 +75,9 @@ const containerReducer = (state = containersInitialState, action) => {
       ));
 
     case UPDATE_DECK_NAME:
-      return state.update('deck', container => (
+      return state.update('deckbuilder', container => (
         container.update('data', data => data
-          .update('name', action.payload)
+          .set('name', action.payload)
         )
       ));
 

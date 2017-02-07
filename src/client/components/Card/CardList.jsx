@@ -38,7 +38,7 @@ class CardList extends React.Component {
         <input type="text" className='deckname'
           value={this.props.deckName}
           placeholder="Nom du deck"
-          onChange={evt => onChangeDeckname(evt.target.value)}/>
+          onChange={evt => this.props.onChangeDeckname(evt.target.value)}/>
         {listCategories}
       </div>
     );

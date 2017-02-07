@@ -18,7 +18,7 @@ const fetchEntityData = (state) => {
 
 const mapStateToProps = state => ({
   cards: fetchEntityData(state),
-  deckname: state.containers.get('deckbuilder').get('data').get('deckname'),
+  deckName: state.containers.get('deckbuilder').get('data').get('name'),
 });
 
 const mapDispatchToProps = dispatch => ({
