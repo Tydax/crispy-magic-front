@@ -2,10 +2,11 @@ import { convertArgs } from './utils';
 import Configuration from './configuration';
 
 const Routes = {
+  root: '/',
   home: '/',
-  myLibrary: '/',
-  myDecks: '/',
-  deckBuilder: '/',
+  myLibrary: '/library/',
+  myDecks: '/deck/',
+  deckBuilder: '/deck/:deckId',
   signUp: '/',
   signIn: '/',
   signOut: '/',

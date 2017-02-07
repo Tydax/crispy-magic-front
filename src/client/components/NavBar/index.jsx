@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 
 import { Routes } from '../../../shared/constants';
 import NavSearchBar from '../../containers/NavSearchBar';
@@ -32,7 +33,7 @@ class NavBar extends React.Component {
     return (
       <li className='menu-item'>
         <h1 className='app-title nav-button'>
-          <a className='link' href={Routes.home}>Crispy Magic</a>
+          <Link className='link' to={Routes.home}>Crispy Magic</Link>
         </h1>
       </li>
     );
@@ -41,7 +42,7 @@ class NavBar extends React.Component {
   renderOtherMenuItems() {
     const NavMenuItem = ({ item }) => (
       <li className='other-menu-item nav-button'>
-        <a className='link' href={item.route}>{item.label}</a>
+        <Link className='link' activeClassName="-active" to={item.route}>{item.label}</Link>
       </li>
     );
 

@@ -62,7 +62,9 @@
 
 .nav-button {
   transition: $trans-time background;
-  &:hover {
+
+  &:hover,
+  > .link.-active {
     background: darken($nav-bg-colour, 10%);
   }
 

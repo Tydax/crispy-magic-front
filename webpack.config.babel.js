@@ -5,7 +5,7 @@ export default {
   output: {
     path: __dirname,
     filename: 'client-bundle.js',
-    publicPath: '/',
+    publicPath: '',
   },
   devtool: 'source-map',
   devServer: {

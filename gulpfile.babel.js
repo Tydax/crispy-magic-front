@@ -81,4 +81,4 @@ gulp.task('webpack-server-dev', ['build', 'sass'], () => {
   });
 });
 
-gulp.task('default', ['webpack-server-dev']);
+gulp.task('default', ['build', 'sass']);
