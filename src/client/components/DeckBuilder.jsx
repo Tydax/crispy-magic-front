@@ -17,7 +17,7 @@ const DeckBuilder = function DeckBuilder() {
       <SmallPane>
         <DeckCardList
           containerToAdd="deckbuilder"
-          categories={['creature&planeswalker', 'artefact&enchantment', 'sorcery&instant', 'land']}
+          categories={['creature&planeswalker', 'artifact&enchantment', 'sorcery&instant', 'land']}
           />
       </SmallPane>
     </div>
